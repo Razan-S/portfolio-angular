@@ -1,0 +1,26 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+div p {
+    font-size: clamp(2rem, 5rem, 7rem);
+}
+
+div p i {
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    div p {
+        font-size: clamp(1rem, 3rem, 5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    div p {
+        font-size: clamp(1rem, 2rem, 3rem);
+    }
+}
