@@ -13,9 +13,10 @@ export interface Activity {
 export interface ActivityDetail extends Activity {
   opinion: string;
   dateFrom: string;
-  dateTo: string;
-  role: string[];
-  link: string;
+  dateTo?: string;
+  roles?: string[];
+  reward?: string;
+  link?: string;
 }
 
 @Injectable({

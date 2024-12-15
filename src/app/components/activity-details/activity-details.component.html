@@ -1,12 +1,47 @@
-<div class="pt-4">
-    <p-button 
-        icon="fa-solid fa-arrow-left"
-        label="Back"
-        (onClick)="backToActivityList()">
-    </p-button>    
-</div>
-<div>
-
+<div class="page">
+    <div class="back">
+        <p-button 
+            icon="fa-solid fa-arrow-left"
+            label="Back"
+            (onClick)="backToActivityList()">
+        </p-button>
+        
+        <div class="tags">
+            <p-chip *ngFor="let tag of detail.types"> {{ tag }}</p-chip>
+            <p class="text-bold text-2xl"> : Tags </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="top">
+            <div class="slider">
+                <app-slide-show></app-slide-show>                
+            </div>
+            <div class="overview">
+                <p class="title"> {{ detail.title }}</p>
+                <p *ngIf="detail.reward"> {{ detail.reward }}</p>
+                <fieldset>
+                    <legend>Description</legend>
+                    <p> {{ detail.description }}</p>
+                </fieldset>
+                <fieldset>
+                    <legend>Skill Earned</legend>
+                    <p> {{ detail.opinion }}</p>
+                </fieldset>
+                <div class="roles">
+                    <p class="text-bold text-2xl"> Role : </p>
+                    <p-chip *ngFor="let role of detail.roles"> {{ role }}</p-chip>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>{{ "Status : " + detail.status }}</p>
+            <div class="date">
+                <p>{{ "Range :"}}</p>
+                <p-chip [label]="detail.dateFrom"></p-chip>
+                <p-chip [label]="detail.dateTo"></p-chip>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- 

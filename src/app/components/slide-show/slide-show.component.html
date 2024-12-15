@@ -1,0 +1,21 @@
+<div class="slider-container">
+    <div 
+        class="slider-item" 
+        *ngFor="let image of images; let i = index"
+        [ngClass]="{
+            'selected': i === selectIndex,
+            'prev': i === selectIndex - 1,
+            'next': i === selectIndex + 1,
+            'hideLeft' : i < selectIndex - 1,
+            'hideRight' : i > selectIndex + 1,
+        }">
+        <img
+            class="image" 
+            [src]="image" 
+            alt="Picture of the activity"
+            [draggable]="false"
+            (panright)="showPrev(i)"
+            (panleft)="showNext(i)"
+            >
+    </div>
+</div>

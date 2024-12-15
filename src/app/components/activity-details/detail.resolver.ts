@@ -1,7 +1,18 @@
-import { ResolveFn } from '@angular/router';
+import { inject } from '@angular/core';
+import { ResolveFn, Router } from '@angular/router';
 
-export const detailResolver: ResolveFn<boolean> = (route, state) => {
-  console.log(state);
+export const detailResolver: ResolveFn<any> = () => {
+  const router = inject(Router);
 
-  return true;
+  let activityId = null;;
+
+  if (router.getCurrentNavigation()?.extras.state) {
+    const state = router.getCurrentNavigation()?.extras.state;
+  }
+
+  if (activityId) {
+    console.log(activityId);
+  }
+
+  return { id: activityId };
 };

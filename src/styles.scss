@@ -19,8 +19,14 @@ body {
     font-family: 'DMSerifText' !important;
     color: white;
     background-color: #17153B;
-    box-sizing: border-box;
     padding: 1rem;
 
     min-width:300px;
+}
+
+.router-outlet {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
 }
