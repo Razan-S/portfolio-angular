@@ -1,0 +1,150 @@
+.card {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    background-color: #433D8B;
+    border-radius: 2.25rem;
+}
+
+.card .image {
+    width: 30%;
+    min-width: 200px;
+    padding: 0.25rem;
+    border-top-left-radius: 2.25rem;
+    border-bottom-left-radius: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .detail {
+    width: 70%;
+    background-color: #2E236C;
+    padding: 1rem;
+    border-top-right-radius: 2.25rem;
+    border-bottom-right-radius: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .detail .header {
+    margin-bottom: 1rem;
+}
+
+.card .detail .title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.card .detail .description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+.card .detail .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card .detail .footer .type-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-container .btn {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: #C8ACD6;
+    color: #2E236C;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #2E236C;
+    transition: background-color 0.3s ease;
+}
+
+.button-container .btn:hover {
+    background-color: #17153B;
+    color: white;
+}
+
+:host ::ng-deep .p-chip {
+    background-color: #17153B;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .card .image,
+    .card .detail {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card .image {
+        height: 300px;
+        border-radius: 2.25rem 2.25rem 0 0;
+    }
+
+    .card .image img {
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .card .detail {
+        border-radius: 0 0 2.25rem 2.25rem;
+    }
+
+    .card .detail .footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .type-container {
+        width: 100%;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        margin: 0 0.5rem;
+    }
+
+    .card .detail .title {
+        font-size: 1.5rem;
+    }
+
+    .card .image {
+        height: 250px;
+    }
+}
+
+p {
+    margin: 0;
+}
+

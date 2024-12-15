@@ -1,1 +1,26 @@
-<p>activity-card works!</p>
+<div class="card shadow-7">
+    <div class="image">
+        <img src="{{src}}" alt="activity" draggable="false" />
+    </div>
+    <div class="detail">
+        <div class="header">
+            <p class="title"> {{ title }} <i class="status" [ngClass]="icon[2]"></i></p>
+            <p class="description">  {{ description }} </p>        
+        </div>
+        <div class="footer">
+            <div class="type-container">
+                <p-chip *ngFor="let item of types" label="{{ item }}"></p-chip>
+            </div>
+            <div class="button-container">
+                <a 
+                    class="btn"
+                    [routerLink]="['detail']"
+                    [state]="{ id: id }"
+                >
+                    Detail
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
